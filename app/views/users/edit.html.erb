@@ -1,0 +1,23 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form users-form">
+      <%= form_tag("/users/#{@user.id}", :method => :patch, :multipart => :true) do %>
+        <div class="form-body">
+          <% @user.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <p>ユーザー名</p>
+          <%= text_field_tag :name, @user.name %>
+          <p>メールアドレス</p>
+          <%= text_field_tag :email, @user.email %>
+          <p>画像</p>
+          <%= file_field_tag "image" %>
+          <%= submit_tag "保存"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

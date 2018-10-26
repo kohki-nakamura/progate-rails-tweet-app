@@ -1,0 +1,16 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <p>
+        <%= @post.content %>
+      </p>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+      <div class="post-menus">
+        <a href="/posts/<%= @post.id %>/edit">編集</a>
+        <a href="/posts/<%= @post.id %>" data-method="delete">削除</a>
+      </div>
+    </div>
+  </div>
+</div>
