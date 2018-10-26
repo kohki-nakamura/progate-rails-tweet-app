@@ -1,0 +1,18 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <div class="form">
+      <%= form_tag ("/posts/create") do %>
+        <div class="form-body">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <%= text_area_tag :content, @post.content %>
+          <%= submit_tag "投稿" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
